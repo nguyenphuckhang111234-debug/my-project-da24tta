@@ -1,10 +1,10 @@
 body{
-    font-family: Times New Roman;
+    font-family: "Times New Roman";
     margin: 20px;
 }
 
 .container{
-    border: 2px solid black;
+    border: 3px solid black;
     padding: 20px;
 }
 
@@ -24,12 +24,22 @@ body{
     flex: 1;
 }
 
+/* PHẦN THÔNG TIN CHI TIẾT */
+.thongtin{
+    margin-top: 20px;
+}
+
+/* BẢNG 2 ĐƯỜNG VIỀN */
 table{
     border-collapse: collapse;
     margin-top: 10px;
+    border: 3px double black;
 }
 
+/* Ô TRONG BẢNG */
 table th,
 table td{
-    padding: 5px 10px;
+    border: 3px double black;
+    padding: 8px 12px;
+    text-align: left;
 }
