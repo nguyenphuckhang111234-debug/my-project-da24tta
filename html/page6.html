@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hóa Đơn Mua Hàng Cao Cấp</title>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        table{
+            width: 1200px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th{
+            background-color: #f2f2f2;
+        }
+
+        #tongthanhtoan{
+            font-weight: bold;
+            color: red;
+            font-size: 20px;
+        }
+
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>HÓA ĐƠN MUA HÀNG CAO CẤP</h2>
+
+<table>
+
+    <tr>
+        <th>STT</th>
+        <th>Tên hàng</th>
+        <th>Số lượng</th>
+        <th>Đơn giá</th>
+        <th>ĐVT</th>
+        <th>Thành tiền</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td class="tenhang">Bia Corona</td>
+        <td class="soluong">10</td>
+        <td class="dongia">35000</td>
+        <td>Lon</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td class="tenhang">iPhone 17 Pro Max</td>
+        <td class="soluong">1</td>
+        <td class="dongia">45000000</td>
+        <td>Máy</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td class="tenhang">MacBook</td>
+        <td class="soluong">1</td>
+        <td class="dongia">55000000</td>
+        <td>Máy</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td class="tenhang">BMW 350i</td>
+        <td class="soluong">1</td>
+        <td class="dongia">2500000000</td>
+        <td>Xe</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td class="tenhang">Bộ đồ vest</td>
+        <td class="soluong">10</td>
+        <td class="dongia">3000000</td>
+        <td>Bộ</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td class="tenhang">Căn hộ trung tâm Quận 1</td>
+        <td class="soluong">10</td>
+        <td class="dongia">7000000000</td>
+        <td>Căn</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>7</td>
+        <td class="tenhang">Miếng đất</td>
+        <td class="soluong">7</td>
+        <td class="dongia">15000000000</td>
+        <td>Miếng</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>8</td>
+        <td class="tenhang">Biệt thự</td>
+        <td class="soluong">1</td>
+        <td class="dongia">50000000000</td>
+        <td>Căn</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td class="tenhang">Dàn PC</td>
+        <td class="soluong">1</td>
+        <td class="dongia">80000000</td>
+        <td>Bộ</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td>10</td>
+        <td class="tenhang">Máy bay riêng</td>
+        <td class="soluong">1</td>
+        <td class="dongia">150000000000</td>
+        <td>Chiếc</td>
+        <td class="thanhtien"></td>
+    </tr>
+
+    <tr>
+        <td colspan="5">
+            Tổng thanh toán
+        </td>
+
+        <td id="tongthanhtoan"></td>
+    </tr>
+
+</table>
+
+<script>
+
+    let soluong = document.getElementsByClassName("soluong");
+    let dongia = document.getElementsByClassName("dongia");
+    let thanhtien = document.getElementsByClassName("thanhtien");
+
+    let tong = 0;
+
+    for(let i = 0; i < soluong.length; i++){
+
+        let sl = Number(soluong[i].innerHTML);
+        let dg = Number(dongia[i].innerHTML);
+
+        let tt = sl * dg;
+
+        thanhtien[i].innerHTML = tt.toLocaleString("vi-VN") + " VNĐ";
+
+        tong = tong + tt;
+    }
+
+    document.getElementById("tongthanhtoan").innerHTML =
+        tong.toLocaleString("vi-VN") + " VNĐ";
+
+</script>
+        
+</body>
+</html>

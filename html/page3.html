@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script</title>
+</head>
+
+<body>
+
+<script>
+    let name = prompt("Nhập tên của bạn: ");
+    let year = Number(prompt("Nhập năm sinh của bạn"));
+
+    alert("Chào bạn: " + name + " năm 2026 bạn đã " + (2026 - year) + " tuổi rồi");
+
+    let a = "Bạn trưởng thành rồi!!";
+    let b = "Bạn còn quá jet!!";
+
+    if ((2026 - year) >= 20) {
+        alert((2026 - year) + " " + a);
+    } else {
+        alert((2026 - year) + " " + b);
+    }
+</script>
+
+</body>
+</html>
