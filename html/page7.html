@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>In bảng cửu chương</title>
+    <meta charset="utf-8">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+    height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+}
+
+
+.container{
+
+    width:380px;
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px #0004;
+
+    text-align:center;
+}
+
+
+h2{
+
+    color:#3498db;
+
+    margin-bottom:25px;
+
+}
+
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#555;
+
+}
+
+
+input[type=number]{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:2px solid #ddd;
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+input[type=button]{
+
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#3498db;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+input[type=button]:hover{
+
+    background:#e74c3c;
+
+}
+
+
+
+#result{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#f5f5f5;
+
+    border-radius:15px;
+
+    color:#333;
+
+    line-height:1.8;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+td{
+
+    border-bottom:1px solid #ddd;
+
+    padding:5px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <h2> In bảng cửu chương </h2>
+
+
+    <form id="frmBCC">
+
+
+        <label>
+            Nhập vào số từ 1 đến 10:
+        </label>
+
+
+        <input 
+        type="number" 
+        name="txtSo" 
+        id="txtSo" 
+        value="2"
+        min="1"
+        max="10">
+
+
+        <input 
+        type="button" 
+        value="In bảng cửu chương"
+        onclick="inBCC(document.getElementById('txtSo').value)">
+
+
+    </form>
+
+
+
+    <div id="result">
+
+        Chỗ này sẽ hiện bảng cửu chương
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+function inBCC(n){
+
+
+    n = Number(n);
+
+
+    if(n < 1 || n > 10){
+
+        document.getElementById("result").innerHTML =
+        "❌ Vui lòng nhập số từ 1 đến 10";
+
+        return;
+
+    }
+
+
+
+    let html = 
+    "<h3>Bảng cửu chương "+n+"</h3>";
+
+    html += "<table>";
+
+
+
+    for(let i=1;i<=10;i++){
+
+
+        html += 
+        "<tr><td>"
+        + n + " × " + i
+        + "</td><td>= "
+        + (n*i)
+        + "</td></tr>";
+
+    }
+
+
+
+    html += "</table>";
+
+
+
+    document.getElementById("result").innerHTML = html;
+
+
+}
+
+
+</script>
+  <script src="../js/lib.js"></script>
+<!-- 
+  Truy xuất giá trị của một control trong from có thể sử dụng các cách sau:
+  doccuman.gêtlementById('txtSo').value
+  Hoặc: sử dụng thông qua đối tượng froms 
+  ví dụ:
+  froms[0]['txtSo'].value
+  froms['frmBCC']['txtSo'].value
+  froms['frmBCC'][0].value
+  -->
+
+</body>
+</html>
