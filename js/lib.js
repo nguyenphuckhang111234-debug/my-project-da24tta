@@ -1,4 +1,42 @@
 /*Mã nguồn Javascript*/
+//Khai báo một đối tượng
+const products = [
+    {
+        id:"1",
+        name:"BMW-i8",
+        price:"5.699.000.000",
+        description:"BMW 3 Series mới mang đến diện mạo nổi bật cho một chiếc sedan mang đậm phong cách thể thao....",
+        image:"../assets/img/BMW-i8.jpg",
+        link:"http://bmw.vn/vi/"
+    },
+    {
+        id: "2",
+        name: "Mercedes-Benz C200",
+        price: "1.729.000.000",
+        description: "Mercedes-Benz C-Class thế hệ mới sở hữu thiết kế sang trọng hiện đại....",
+        image: "../assets/img/mercedes-c200.jpg", // Bạn thay đổi đường dẫn ảnh cho đúng nhé
+        link: "https://www.mercedes-benz.com.vn/vi/passengercars.html"
+    },
+    {
+        id: "3",
+        name: "Audi A4 Sedan",
+        price: "1.800.000.000",
+        description: "Audi A4 mang phong cách thể thao mạnh mẽ, trải nghiệm lái tuyệt vời....",
+        image: "../assets/img/audi-a4.jpg", // Bạn thay đổi đường dẫn ảnh cho đúng nhé
+        link: "https://www.audi.vn/vi/"
+    },
+    {
+        id: "4",
+        name: "VinFast VF 9",
+        price: "2.300.000.000 VNĐ",
+        description: "VinFast VF 9 là dòng xe SUV điện không gian rộng rãi cùng công nghệ thông minh vượt trội....",
+        image: "../assets/img/vinfast-vf9.jpg", // Bạn đổi lại tên file ảnh trong thư mục img cho đúng nhé
+        link: "https://shop.vinfastauto.com/vn_vi/dat-coc-xe-vf9.html"
+    }
+];
+
+
+
 function inBCC(n)
 {
     let result = "";
@@ -75,4 +113,32 @@ function addItem(name, price, description, link, image)
     item.appendChild(containerInfo);
     //Đưa khung chứa container-product-list vào container
     document.getElementById("container-product-list").appendChild(item);
+}
+
+function addItemV2(obj) {
+    const list = document.getElementById("product-list");
+    list.innerHTML += `
+        <div class="col">
+            <div class="card product-item">
+                <div class="product-image">
+                    <img class="card-img-top" src="${obj.image}" alt="${obj.name}">
+                </div>
+                <div class="card-body bg-light product-info">
+                    <h4 class="card-title">${obj.name}</h4>
+                    <h5 class="card-text">${obj.price}</h5>
+                    <p class="card-text">${obj.description}</p>
+                    <a class="btn btn-info" href="${obj.link}">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Hàm duyệt qua mảng để tải tất cả sản phẩm
+function loadAllProducts(array) {
+    let i = 0;
+    while (i < array.length) {
+        addItemV2(array[i]);
+        i++;
+    }
 }
