@@ -1,28 +1,8 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial;
-}
-
-
-body{
-    background:#f2f2f2;
-    padding:30px;
-}
-
-
-h1{
-    text-align:center;
-    margin-bottom:30px;
-    color:#222;
-}
-
-
 .product-container{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:25px;
+    align-items:stretch;
 }
 
 
@@ -30,72 +10,35 @@ h1{
     background:white;
     border-radius:15px;
     padding:15px;
-    text-align:center;
+    height:520px;          /* tất cả khung bằng nhau */
+    display:flex;
+    flex-direction:column;
+
     box-shadow:0 5px 15px #ccc;
     transition:0.3s;
 }
 
 
-.product:hover{
-    transform:translateY(-10px);
-}
-
-
 .product img{
     width:100%;
-    height:200px;
+    height:200px;          /* ảnh bằng nhau */
     object-fit:cover;
     border-radius:12px;
 }
 
 
-.product h2{
-    margin:15px 0;
-    color:#333;
+.product-info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
 }
 
 
-.product p{
-    color:#666;
-    line-height:1.5;
-    height:80px;
+.product-info p{
+    height:80px;           /* mô tả bằng nhau */
 }
 
 
-.product h3{
-    color:#e63946;
-    margin:15px;
-}
-
-
-button{
-    background:#0066ff;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:25px;
-    cursor:pointer;
-}
-
-
-button:hover{
-    background:#003c99;
-}
-
-
-@media(max-width:900px){
-
-.product-container{
-    grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-
-@media(max-width:500px){
-
-.product-container{
-    grid-template-columns:1fr;
-}
-
+.product-info .btn-info{
+    margin-top:auto;       /* nút luôn ngang nhau */
 }
